@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Speed",
+    "field": "speed",
+    "min": 0,
+    "max": 100
+  },
+  {
+    "name": "Acceleration",
+    "field": "acc",
+    "min": 0,
+    "max": 100
+  },
+  {
+    "name": "weight",
+    "field": "Weight",
+    "min": 0,
+    "max": 100
+  },
+  {
+    "name": "Handling",
+    "field": "hand",
+    "min": 0,
+    "max": 100
+  },
+  {
+    "name": "Traction",
+    "field": "traction",
+    "min": 0,
+    "max": 100
+  }
+]

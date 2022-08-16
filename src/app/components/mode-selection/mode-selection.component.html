@@ -8,7 +8,11 @@
         </p> 
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <p>TODO: ADD AUTOMATIC MODE HERE</p>
+    <mat-stepper [linear]="true">
+      <mat-step>
+        <mk-automatic-form></mk-automatic-form>
+      </mat-step>
+    </mat-stepper>
   </mat-expansion-panel>
   <p class="margins text-between">OR</p>
   <mat-expansion-panel class="margins">
