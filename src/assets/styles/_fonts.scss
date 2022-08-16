@@ -1,14 +1,20 @@
 @font-face {
-  font-family: 'Saira';
-  src: url('../fonts/SairaCondensed-Regular.ttf');
+  font-family: 'Mk8-Text';
+  src: url('../fonts/AlegreyaSans-Regular.ttf');
+  font-weight: 400;
 }
 @font-face {
-  font-family: 'Saira';
-  src: url('../fonts/SairaCondensed-Bold.ttf');
+  font-family: 'Mk8-Text';
+  src: url('../fonts/AlegreyaSans-Medium.ttf');
   font-weight: bold;
 }
 @font-face {
-  font-family: 'Saira';
-  src: url('../fonts/SairaCondensed-Light.ttf');
-  font-weight: lighter;
+  font-family: 'Mk8-Text';
+  src: url('../fonts/AlegreyaSans-Bold.ttf');
+  font-weight: bolder;
+}
+@font-face {
+  font-family: 'Mk8-Text';
+  src: url('../fonts/AlegreyaSans-Thin.ttf');
+  font-weight: 100;
 }
