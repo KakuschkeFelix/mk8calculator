@@ -1,0 +1,49 @@
+$brand-palette: (
+ 50: #e1f5fc,
+ 100: #b2e4f8,
+ 200: #80d2f3,
+ 300: #50c1ed,
+ 400: #2bb3eb,
+ 500: #00a6e8,
+ 600: #0099da,
+ 700: #0086c6,
+ 800: #0075b2,
+ 900: #005591,
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: rgba(black, 0.87),
+   500: white,
+   600: white,
+   700: white,
+   800: white,
+   900: white,
+ )
+);
+
+$accent-palette: (
+  50: #e1fbf2,
+ 100: #b6f5df,
+ 200: #7feecb,
+ 300: #00e8b6,
+ 400: #00e1a4,
+ 500: #00d892,
+ 600: #00c785,
+ 700: #00b376,
+ 800: #00a168,
+ 900: #00804f,
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: rgba(black, 0.87),
+   500: rgba(black, 0.87),
+   600: white,
+   700: white,
+   800: white,
+   900: white,
+ )
+);

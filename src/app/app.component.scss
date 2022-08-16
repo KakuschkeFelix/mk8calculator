@@ -1,0 +1,9 @@
+@import '../assets/styles/core';
+
+.page-header {
+  .title {
+    color: map-get($map: $brand-palette, $key: 500);
+    font-family: 'Saira', sans-serif;
+    font-size: 3rem;
+  }
+}
