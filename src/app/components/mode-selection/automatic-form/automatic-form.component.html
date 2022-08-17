@@ -1,0 +1,16 @@
+<div class="automatic-form">
+  <section [formGroup]="slidersForm">
+    <div *ngFor="let stat of statistics">
+      <label [for]="stat.field">{{ stat.name }}</label>
+      <mat-slider
+      [id]="stat.field"
+      [min]="stat.min"
+      [max]="stat.max"
+      [step]="(stat.max - stat.min) / 10"
+      [formControlName]="stat.field"
+      thumbLabel
+      ></mat-slider>
+    </div>
+    <button mat-raised-button color="primary" (click)="makeResults()">Edit Config</button>
+  </section>
+</div>

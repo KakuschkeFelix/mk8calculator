@@ -14,8 +14,8 @@
       "max": 100
     },
     {
-      "name": "weight",
-      "field": "Weight",
+      "name": "Weight",
+      "field": "weight",
       "min": 0,
       "max": 100
     },

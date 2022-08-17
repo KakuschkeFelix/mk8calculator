@@ -4,3 +4,8 @@ export interface statistic {
   min: number;
   max: number;
 }
+
+export interface onlyStat {
+  field: string;
+  value: number;
+}

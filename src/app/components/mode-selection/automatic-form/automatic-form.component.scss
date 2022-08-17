@@ -1,0 +1,27 @@
+.automatic-form {
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div {
+      width: 100%;
+      .mat-slider-horizontal {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .automatic-form {
+    section {
+      align-items: flex-start;
+      div {
+        width: 20rem;
+        .mat-slider-horizontal {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
