@@ -1,7 +1,8 @@
-import { configDataFeatureKey } from "../constants/store";
+import { configDataFeatureKey, partFeatureKey } from "../constants/store";
+import { IPartState } from "./parts.model";
 import { statistic } from "./statistics.model";
 
-export const genericFeatureKey = 'Generic';
+export const genericFeatureKey = 'Calculator';
 
 export type genericConfigObjectType = statistic; 
 
@@ -16,4 +17,5 @@ export interface configDataState {
 
 export interface genericState {
   [configDataFeatureKey]?: configDataState;
+  [partFeatureKey]?: IPartState;
 }
