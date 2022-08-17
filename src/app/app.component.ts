@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { configObject } from './models/store.model';
+import * as configDataSelectors from './store/config-data/selectors/config.selectors';
 
 @Component({
   selector: 'mk-root',

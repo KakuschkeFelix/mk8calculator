@@ -1,31 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { forkJoin, map, Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 import { environment } from 'src/environments/environment';
+
+import { configObject } from 'src/app/models/store.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigurationDataService {
-
   constructor(private readonly http: HttpClient) { }
 
   get() {
-    const getRequests: any[] = [];
+    const results = []
+    for (const url of environment.configurationFiles) {
+      results.push(this.http.get(url) as Observable<configObject>);
+    }
 
-    environment.configurationFiles.forEach((url) => {
-      getRequests.push(this.http.get(url));
-    });
-
-    return forkJoin(getRequests).pipe(
-      map((results: any) => {
-        const loadedData: any[] = [];
-
-        results.forEach((data: any) => {
-          loadedData.push(data);
-        });
-        return loadedData;
-      })
-    )
+    return forkJoin(results);
   }
+
 }
