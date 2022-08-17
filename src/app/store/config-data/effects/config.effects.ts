@@ -14,7 +14,6 @@ export class ConfigDataEffects {
       switchMap(() => 
         this.configService.get().pipe(
           map((data: configObject[]) => {
-            console.log('data', data);
             return ConfigDataActions.loadConfigDataSuccess({ data})
           }),
           catchError((error: Error) => {

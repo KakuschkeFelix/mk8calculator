@@ -5,31 +5,31 @@
       "name": "Speed",
       "field": "speed",
       "min": 0,
-      "max": 100
+      "max": 10
     },
     {
       "name": "Acceleration",
       "field": "acc",
       "min": 0,
-      "max": 100
+      "max": 10
     },
     {
       "name": "Weight",
       "field": "weight",
       "min": 0,
-      "max": 100
+      "max": 10
     },
     {
       "name": "Handling",
       "field": "hand",
       "min": 0,
-      "max": 100
+      "max": 10
     },
     {
       "name": "Traction",
       "field": "traction",
       "min": 0,
-      "max": 100
+      "max": 10
     }
   ]
 }
