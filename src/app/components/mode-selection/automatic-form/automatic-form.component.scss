@@ -1,4 +1,8 @@
 .automatic-form {
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
   section {
     display: flex;
     flex-direction: column;
@@ -14,6 +18,10 @@
 
 @media only screen and (min-width: 600px) {
   .automatic-form {
+    .title {
+      font-size: 1rem;
+      text-decoration: underline;
+    }
     section {
       align-items: flex-start;
       div {

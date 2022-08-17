@@ -1,4 +1,5 @@
 <div class="automatic-form">
+  <p class="title">Select your Kart priorites:</p>
   <section [formGroup]="slidersForm">
     <div *ngFor="let stat of statistics">
       <label [for]="stat.field">{{ stat.name }}</label>
@@ -11,6 +12,6 @@
       thumbLabel
       ></mat-slider>
     </div>
-    <button mat-raised-button color="primary" (click)="makeResults()">Edit Config</button>
+    <button mat-raised-button color="primary" (click)="makeResults()">See Results</button>
   </section>
 </div>

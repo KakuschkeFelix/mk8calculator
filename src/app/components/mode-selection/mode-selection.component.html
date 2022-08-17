@@ -8,11 +8,11 @@
         </p> 
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <mat-stepper [linear]="true">
-      <mat-step>
-        <mk-automatic-form></mk-automatic-form>
-      </mat-step>
-    </mat-stepper>
+    <div class="automtic">
+      <mk-automatic-form *ngIf="select" (sendConfig)="calculateParts($event)"></mk-automatic-form>
+      <mk-parts-display *ngIf="!select"></mk-parts-display>
+    </div>
+
   </mat-expansion-panel>
   <p class="margins text-between">OR</p>
   <mat-expansion-panel class="margins">
