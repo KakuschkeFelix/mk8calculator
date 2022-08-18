@@ -46,7 +46,7 @@ export class PartCalculatorService {
     return combineLatest(results);
   }
 
-  calcScoreForPart(part: IPart, stats: onlyStat) {
+  private calcScoreForPart(part: IPart, stats: onlyStat) {
     const score = 
     stats.acc * part.AC +
     stats.hand * (( part.TA + part.TG + part.TL + part.TW ) / 4) +
@@ -57,7 +57,7 @@ export class PartCalculatorService {
     return score;
   }
 
-  calcScoreForList(parts: IPart[], stats: onlyStat, type: string): IPartList {
+  private calcScoreForList(parts: IPart[], stats: onlyStat, type: string): IPartList {
     let bestScore = -1;
     let scoreAndParts: scoreAndPart[] = []
     parts.forEach((part) => {
@@ -80,5 +80,35 @@ export class PartCalculatorService {
       parts: scoreAndParts.map(x => x.part),
     }
     return resultList;
+  }
+
+  private calcScoreForCombination(parts: IPart[], stats: onlyStat) {
+    const combined = this.mergeObject(parts) as IPart;
+    const score = this.calcScoreForPart(combined, stats);
+    return score;
+  }
+
+  /* Function based on 
+  https://www.paigeniedringhaus.com/blog/merge-java-script-objects-in-an-array-with-different-defined-properties */
+
+  private mergeObject(obj: any[]): any {
+    let res: any = {};
+    obj.reduce((_, B) => {
+      Object.keys({...res, ...B}).map((key) => {
+        res[key] = (res[key] ?? 0) + (B[key] ?? 0);
+      })
+    }, {});
+    return res;
+  }
+
+  calculateBestCombo(parts: IPartList[], stats: onlyStat) {
+    let combinations = 1;
+    parts.forEach((list) => {
+      combinations *= list.parts.length ?? 1;
+    })
+    if (combinations <= 1024) {
+      // TODO: Make each combination
+      this.calcScoreForCombination(parts[0].parts, stats);
+    }
   }
 }

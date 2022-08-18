@@ -17,6 +17,7 @@ export class ModeSelectionComponent {
   calculateParts(config: onlyStat) {
     this.partCalculatorService.calculate(config).subscribe((result) => {
       this.selectedParts = result;
+      this.partCalculatorService.calculateBestCombo(result, config);
     })
     this.select = false;
   }
