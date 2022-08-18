@@ -1,14 +1,18 @@
-<div class="parts">
-  <div class="category">
-    <mk-single-part *ngFor="let part of drivers" [part]="part"></mk-single-part>
-  </div>
-  <div class="category">
-    <mk-single-part *ngFor="let part of bodies" [part]="part"></mk-single-part>
-  </div>
-  <div class="category">
-    <mk-single-part *ngFor="let part of tyres" [part]="part"></mk-single-part>
-  </div>
-  <div class="category">
-    <mk-single-part *ngFor="let part of gliders" [part]="part"></mk-single-part>
+<div class="display" *ngIf="maxLength <= 20">
+  <p class="title">These are combinations that are viable for your selection:</p>
+  <div class="parts">
+    <div class="category">
+      <mk-single-part *ngFor="let part of drivers" [part]="part"></mk-single-part>
+    </div>
+    <div class="category">
+      <mk-single-part *ngFor="let part of bodies" [part]="part"></mk-single-part>
+    </div>
+    <div class="category">
+      <mk-single-part *ngFor="let part of tyres" [part]="part"></mk-single-part>
+    </div>
+    <div class="category">
+      <mk-single-part *ngFor="let part of gliders" [part]="part"></mk-single-part>
+    </div>
   </div>
 </div>
+<div class="title" *ngIf="maxLength > 20">Please specify your selection...</div>

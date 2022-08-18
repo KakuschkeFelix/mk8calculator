@@ -2,5 +2,8 @@
   <mk-automatic-form *ngIf="select" (sendConfig)="calculateParts($event)"></mk-automatic-form>
   <div class="parts-display">
     <mk-parts-display *ngIf="!select" [parts]="selectedParts"></mk-parts-display>
+    <div class="backbtn" *ngIf="!select">
+      <button mat-raised-button color="primary" (click)="select = !select">Go Back</button>
+    </div>
   </div>
 </div>

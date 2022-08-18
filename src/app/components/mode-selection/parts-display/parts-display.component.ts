@@ -13,6 +13,8 @@ export class PartsDisplayComponent implements OnInit {
   tyres: IPart[];
   gliders: IPart[];
 
+  maxLength = 0;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -20,6 +22,7 @@ export class PartsDisplayComponent implements OnInit {
     this.bodies = this.parts.find((list) => list.type == 'body')?.parts ?? [];
     this.tyres = this.parts.find((list) => list.type == 'tyre')?.parts ?? [];
     this.gliders = this.parts.find((list) => list.type == 'glider')?.parts ?? [];
+    this.maxLength = Math.max(this.drivers.length, this.bodies.length, this.tyres.length, this.gliders.length);
   }
 
 }
