@@ -82,7 +82,7 @@ export class PartCalculatorService {
     return resultList;
   }
 
-  private calcScoreForCombination(parts: IPart[], stats: onlyStat) {
+  calcScoreForCombination(parts: IPart[], stats: onlyStat) {
     const combined = this.mergeObject(parts) as IPart;
     const score = this.calcScoreForPart(combined, stats);
     return score;
@@ -90,11 +90,13 @@ export class PartCalculatorService {
 
   /* Function based on 
   https://www.paigeniedringhaus.com/blog/merge-java-script-objects-in-an-array-with-different-defined-properties */
-
   private mergeObject(obj: any[]): any {
     let res: any = {};
     obj.reduce((_, B) => {
       Object.keys({...res, ...B}).map((key) => {
+        if (key === 'name') {
+          res[key] = (res[key] ?? '') + ',' + (B[key] ?? '');
+        }
         res[key] = (res[key] ?? 0) + (B[key] ?? 0);
       })
     }, {});
@@ -108,7 +110,29 @@ export class PartCalculatorService {
     })
     if (combinations <= 1024) {
       // TODO: Make each combination
-      this.calcScoreForCombination(parts[0].parts, stats);
+      let scoresAndCombos = [];
+      let bestScore = -1;
+      for (let driver of parts[0].parts) {
+        for (let body of parts[1].parts) {
+          for (let tyre of parts[2].parts) {
+            for (let glider of parts[3].parts) {
+              const combo = [driver, body, tyre, glider];
+              const score = this.calcScoreForCombination(combo, stats);
+              scoresAndCombos.push({
+                combo: combo, 
+                score: score
+              });
+              if (score > bestScore) {
+                bestScore = score;
+              }
+            }
+          }
+        }
+      }
+      scoresAndCombos = scoresAndCombos.filter((combo) => combo.score === bestScore);
+      return scoresAndCombos;
+    } else {
+      return undefined;
     }
   }
 }
