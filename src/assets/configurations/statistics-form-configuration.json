@@ -30,6 +30,12 @@
       "field": "traction",
       "min": 0,
       "max": 10
+    },
+    {
+      "name": "Mini Turbo",
+      "field": "miTu",
+      "min": 0,
+      "max": 10
     }
   ]
 }

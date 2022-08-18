@@ -6,6 +6,10 @@ export interface statistic {
 }
 
 export interface onlyStat {
-  field: string;
-  value: number;
+  speed: number;
+  acc: number;
+  weight: number;
+  hand: number;
+  traction: number;
+  miTu: number;
 }

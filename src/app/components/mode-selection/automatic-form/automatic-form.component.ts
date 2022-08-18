@@ -13,7 +13,7 @@ export class AutomaticFormComponent implements OnInit {
   slidersForm = this._formBuilder.group({});
   statistics: statistic[];
 
-  @Output() sendConfig: EventEmitter<onlyStat[]> = new EventEmitter();
+  @Output() sendConfig: EventEmitter<onlyStat> = new EventEmitter();
 
   constructor(private _formBuilder: FormBuilder, private readonly store: Store) {}
 
@@ -29,15 +29,16 @@ export class AutomaticFormComponent implements OnInit {
   }
 
   makeResults() {
-    const results: onlyStat[] = [];
-    for (const [key, value] of Object.entries(this.slidersForm.value)) {
-      results.push({
-        field: key,
-        value: value as number,
-      });
+    const results: onlyStat = {
+      speed: (this.slidersForm.value as any).speed,
+      acc: (this.slidersForm.value as any).acc,
+      hand: (this.slidersForm.value as any).hand,
+      traction: (this.slidersForm.value as any).traction,
+      weight: (this.slidersForm.value as any).weight,
+      miTu: (this.slidersForm.value as any).miTu,
     }
+    
     this.sendConfig.emit(results);
-    // TODO: Put these stats in store instead
   }
 
 }

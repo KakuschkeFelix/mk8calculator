@@ -4,24 +4,26 @@ import { IPart, IPartList, IPartState } from "src/app/models/parts.model";
 import { genericState } from "src/app/models/store.model";
 import { getGenericState } from "../../generic/selectors/generic.selectors";
 
-export const selectConfigState = createSelector(
+export const selectPartState = createSelector(
   getGenericState,
   (state: genericState): IPartState => {
     return state[partFeatureKey]!;
   }
 );
 
-export const selectAllConfigs = createSelector(
-  selectConfigState,
+export const selectAllPartLists = createSelector(
+  selectPartState,
   (state: IPartState): IPartList[] => {
     return state.partlists
   }
 );
 
-export const selectConfigByType = (
+export const selectPartsByType = (
   type: string
-  ): MemoizedSelector<genericState, IPartList> => 
+  ): MemoizedSelector<genericState, IPart[]> => 
   createSelector(
-    selectAllConfigs,
-    (objects: IPartList[]): IPartList => objects?.find((obj) => obj.type === type)!
-  );
+    selectAllPartLists,
+    (objects: IPartList[]): IPart[] => {
+      const parts = objects?.find((obj) => obj.type === type)?.parts;
+      return parts ? parts : [];
+    });
