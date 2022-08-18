@@ -4,9 +4,9 @@ export const environment = {
     '../assets/configurations/statistics-form-configuration.json',
   ],
   localAssets: [
-    '../assets/partstats/bodies.json',
-    '../assets/partstats/drivers.json',
-    '../assets/partstats/gliders.json',
-    '../assets/partstats/tires.json',
+    `${window.location.origin}/assets/partstats/bodies.json`,
+    `${window.location.origin}/assets/partstats/drivers.json`,
+    `${window.location.origin}/assets/partstats/gliders.json`,
+    `${window.location.origin}/assets/partstats/tires.json`,
   ]
 };

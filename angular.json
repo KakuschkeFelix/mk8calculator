@@ -25,7 +25,16 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "src/assets/configurations/",
+                "output": "/configurations/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets/partstats/",
+                "output": "/partstats/"
+              }
             ],
             "styles": [
               "src/styles.scss"
