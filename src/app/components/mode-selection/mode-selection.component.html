@@ -1,28 +1,4 @@
-
-<div class="mode-selection">
-  <mat-expansion-panel class="margins">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <p class="panel-title">
-          Automatic Mode
-        </p> 
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div class="automtic">
-      <mk-automatic-form *ngIf="select" (sendConfig)="calculateParts($event)"></mk-automatic-form>
-      <mk-parts-display *ngIf="!select"></mk-parts-display>
-    </div>
-
-  </mat-expansion-panel>
-  <p class="margins text-between">OR</p>
-  <mat-expansion-panel class="margins">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <p class="panel-title">
-          Manual Mode
-        </p> 
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>TODO: ADD MANUAL MODE HERE</p>
-  </mat-expansion-panel>
+<div class="automatic">
+  <mk-automatic-form *ngIf="select" (sendConfig)="calculateParts($event)"></mk-automatic-form>
+  <mk-parts-display *ngIf="!select" [parts]="selectedParts"></mk-parts-display>
 </div>

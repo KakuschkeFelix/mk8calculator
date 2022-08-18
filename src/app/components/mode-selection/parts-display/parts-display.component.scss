@@ -1,0 +1,13 @@
+.parts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  .category {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 25%;
+    padding: 1rem;
+  }
+}

@@ -1,3 +1,14 @@
 <div class="parts">
-  <mk-single-part *ngFor="let part of parts" [part]="part"></mk-single-part>
+  <div class="category">
+    <mk-single-part *ngFor="let part of drivers" [part]="part"></mk-single-part>
+  </div>
+  <div class="category">
+    <mk-single-part *ngFor="let part of bodies" [part]="part"></mk-single-part>
+  </div>
+  <div class="category">
+    <mk-single-part *ngFor="let part of tyres" [part]="part"></mk-single-part>
+  </div>
+  <div class="category">
+    <mk-single-part *ngFor="let part of gliders" [part]="part"></mk-single-part>
+  </div>
 </div>
