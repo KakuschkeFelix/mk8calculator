@@ -1,4 +1,6 @@
 <div class="automatic">
   <mk-automatic-form *ngIf="select" (sendConfig)="calculateParts($event)"></mk-automatic-form>
-  <mk-parts-display *ngIf="!select" [parts]="selectedParts"></mk-parts-display>
+  <div class="parts-display">
+    <mk-parts-display *ngIf="!select" [parts]="selectedParts"></mk-parts-display>
+  </div>
 </div>
