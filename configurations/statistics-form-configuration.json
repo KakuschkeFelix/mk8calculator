@@ -1,0 +1,41 @@
+{
+  "type": "automaticFormConfig",
+  "value": [
+    {
+      "name": "Speed",
+      "field": "speed",
+      "min": 0,
+      "max": 10
+    },
+    {
+      "name": "Acceleration",
+      "field": "acc",
+      "min": 0,
+      "max": 10
+    },
+    {
+      "name": "Weight",
+      "field": "weight",
+      "min": 0,
+      "max": 10
+    },
+    {
+      "name": "Handling",
+      "field": "hand",
+      "min": 0,
+      "max": 10
+    },
+    {
+      "name": "Traction",
+      "field": "traction",
+      "min": 0,
+      "max": 10
+    },
+    {
+      "name": "Mini Turbo",
+      "field": "miTu",
+      "min": 0,
+      "max": 10
+    }
+  ]
+}
